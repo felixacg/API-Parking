@@ -1,0 +1,25 @@
+version: '4.27.1' 
+services: 
+  #server: 
+   # build: ./
+    #image: server/v1.1
+    #ports:
+    #- 3000:3000
+    #depends_on:
+    #- db
+  db: 
+   image: postgis/postgis
+   restart: always
+   container_name: parking-db 
+   environment:
+     - POSTGRES_DB=parking
+     - POSTGRES_USER=postgres
+     - POSTGRES_PASSWORD=postgres
+     -  PGDATA= /tmp
+   ports:
+     - 5433:5432
+   volumes:
+      - C:\Users\Dímelo Andry\Desktop\Proyecto Parking:/var/lib/postgresql/data
+
+
+  
